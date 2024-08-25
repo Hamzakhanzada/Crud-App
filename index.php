@@ -23,14 +23,12 @@ if (isset($_GET['delete'])) {
     $delete = true;
     $sql = "DELETE FROM `notes`  WHERE `sno` = $sno";
     $result = mysqli_query($conn, $sql);
-
-
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['snoEdit'])) {
         echo "yes";
         // update the records
-        $sno = $_POST ['snoEdit'];
+        $sno = $_POST['snoEdit'];
         $title = $_POST['titleEdit'];
         $description = $_POST['descriptionEdit'];
 
@@ -39,9 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $update = true;
-
-        }
-        else {
+        } else {
             echo "we could not updated a record successfully";
         }
     } else {
@@ -106,12 +102,12 @@ Edit Modal
                             <textarea class="form-control" id="descriptionEdit" name="descriptionEdit" rows="3"></textarea>
                         </div>
                         <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary d-block mr-auto">Save changes</button>
-                </div>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary d-block mr-auto">Save changes</button>
+                        </div>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -152,7 +148,7 @@ Edit Modal
 </div>';
     }
     ?>
-     <?php
+    <?php
     if ($update) {
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Success</strong> Your note has been updated successfully.
@@ -160,7 +156,7 @@ Edit Modal
 </div>';
     }
     ?>
-     <?php
+    <?php
     if ($delete) {
         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Success</strong> Your note has been deleted successfully.
@@ -209,11 +205,7 @@ Edit Modal
                     </td>
                     </tr>";
                 }
-
-
                 ?>
-
-
             </tbody>
         </table>
     </div>
@@ -252,18 +244,17 @@ Edit Modal
         Array.from(deletes).forEach((element) => {
             element.addEventListener("click", (e) => {
                 console.log("edit", );
-               sno = e.target.id.substr(1,)
-                
+                sno = e.target.id.substr(1, )
+
                 if (confirm("Are you sure want to delete this note!")) {
                     console.log("yes");
                     window.location = `/CRUD-APP/index.php?delete=${sno}`;
 
-                }
-                else {
+                } else {
                     console.log("no");
 
                 }
-                
+
 
 
 
