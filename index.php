@@ -188,10 +188,10 @@ Edit Modal
         <table class="table" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col">S.NO</th>
+                    <th scope="col">S.NO </th>
                     <th scope="col">Title</th>
                     <th scope="col">Discription</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
